@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Engine", "Engine", "{33F69E08-3AD5-4149-9665-96CFC66E5E3A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{CA501462-9597-4C3D-8C8A-D60E0286C5C3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EngineStepTest", "EngineStepTest", "{D84318C4-720C-4D9D-A87E-F3F0E2B1F6CA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CppFeatureTest", "CppFeatureTest", "{DCF9F0EB-DE38-48A2-8D30-EF226449E06D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample", "Sample", "{CB4B87CB-5256-4736-B678-FF61680FC9B1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3rd Part", "3rd Part", "{778D0E47-5938-4D9F-A3F9-AF848A9B6BDF}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestOperaterNew", "Test\CppFeatureTest\TestOperaterNew\TestOperaterNew.vcxproj", "{D2F3B8BF-19D2-4FAD-A255-14EEB66E1B9E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D2F3B8BF-19D2-4FAD-A255-14EEB66E1B9E}.Debug|x64.ActiveCfg = Debug|x64
+		{D2F3B8BF-19D2-4FAD-A255-14EEB66E1B9E}.Debug|x64.Build.0 = Debug|x64
+		{D2F3B8BF-19D2-4FAD-A255-14EEB66E1B9E}.Debug|x86.ActiveCfg = Debug|Win32
+		{D2F3B8BF-19D2-4FAD-A255-14EEB66E1B9E}.Debug|x86.Build.0 = Debug|Win32
+		{D2F3B8BF-19D2-4FAD-A255-14EEB66E1B9E}.Release|x64.ActiveCfg = Release|x64
+		{D2F3B8BF-19D2-4FAD-A255-14EEB66E1B9E}.Release|x64.Build.0 = Release|x64
+		{D2F3B8BF-19D2-4FAD-A255-14EEB66E1B9E}.Release|x86.ActiveCfg = Release|Win32
+		{D2F3B8BF-19D2-4FAD-A255-14EEB66E1B9E}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D84318C4-720C-4D9D-A87E-F3F0E2B1F6CA} = {CA501462-9597-4C3D-8C8A-D60E0286C5C3}
+		{DCF9F0EB-DE38-48A2-8D30-EF226449E06D} = {CA501462-9597-4C3D-8C8A-D60E0286C5C3}
+		{D2F3B8BF-19D2-4FAD-A255-14EEB66E1B9E} = {DCF9F0EB-DE38-48A2-8D30-EF226449E06D}
+	EndGlobalSection
+EndGlobal
