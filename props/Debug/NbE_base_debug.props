@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <RunEnv>$(SolutionDir)..\RunEnv</RunEnv>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OutDir>$(SolutionDir)..\Compile\Binary\$(ProjectName)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\Compile\Linker\$(ProjectName)\$(Configuration)\</IntDir>
+    <LibraryPath>$(SolutionDir)lib;$(SolutionDir)lib\3rd;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir);$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup />
+  <ItemGroup>
+    <BuildMacro Include="RunEnv">
+      <Value>$(RunEnv)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>
