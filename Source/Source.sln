@@ -27,6 +27,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{B32DA2D2
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EngineEntity", "Engine\EngineEntity\EngineEntity.vcxproj", "{26F9F945-8662-48A3-B824-D9BD5CB20E0C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Config", "Config", "{9BC812AB-693E-4114-99F7-84883D1C3362}"
+	ProjectSection(SolutionItems) = preProject
+		Engine\Tools\Config\Config.h = Engine\Tools\Config\Config.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -72,5 +77,6 @@ Global
 		{32D7A0F3-8B78-4030-A72A-9376F9A61DAD} = {33F69E08-3AD5-4149-9665-96CFC66E5E3A}
 		{B32DA2D2-F96A-4687-8CAE-60CE41F8317F} = {33F69E08-3AD5-4149-9665-96CFC66E5E3A}
 		{26F9F945-8662-48A3-B824-D9BD5CB20E0C} = {33F69E08-3AD5-4149-9665-96CFC66E5E3A}
+		{9BC812AB-693E-4114-99F7-84883D1C3362} = {B32DA2D2-F96A-4687-8CAE-60CE41F8317F}
 	EndGlobalSection
 EndGlobal

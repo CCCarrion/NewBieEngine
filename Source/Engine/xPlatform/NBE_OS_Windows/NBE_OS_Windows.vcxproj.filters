@@ -8,4 +8,12 @@
       <UniqueIdentifier>{87f69e35-8155-4cc3-844c-226685b76a64}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="public\NBE_OS_WIndows.h">
+      <Filter>public</Filter>
+    </ClInclude>
+    <ClInclude Include="public\NBE_Macro_Windows.h">
+      <Filter>public</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>
