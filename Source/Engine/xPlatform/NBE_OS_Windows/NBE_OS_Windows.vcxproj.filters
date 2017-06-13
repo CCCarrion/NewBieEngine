@@ -7,6 +7,9 @@
     <Filter Include="private">
       <UniqueIdentifier>{87f69e35-8155-4cc3-844c-226685b76a64}</UniqueIdentifier>
     </Filter>
+    <Filter Include="config">
+      <UniqueIdentifier>{edf12633-8e3b-40e6-8d1b-32d53b25dbd7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="public\NBE_OS_WIndows.h">

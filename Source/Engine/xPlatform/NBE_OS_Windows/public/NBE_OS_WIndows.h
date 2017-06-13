@@ -15,7 +15,10 @@
 #pragma endregion
 
 
+NBE_NS_OS
+{
 
+}
 
 
 

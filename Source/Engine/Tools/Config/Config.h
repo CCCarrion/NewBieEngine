@@ -22,6 +22,11 @@
 */
 #pragma endregion 
 
+/**    Define NBE NameSpace   **/
+#define NBE_NS_COMMON namespace nbe
+#define NBE_NS_OS namespace nbe_os
+
+
 
 
 #endif
