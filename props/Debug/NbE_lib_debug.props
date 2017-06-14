@@ -6,6 +6,13 @@
     <OutDir>$(SolutionDir)..\Compile\Binary\$(ProjectName)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)..\Compile\Linker\$(ProjectName)\$(Configuration)\</IntDir>
   </PropertyGroup>
-  <ItemDefinitionGroup />
+  <ItemDefinitionGroup>
+    <PostBuildEvent>
+      <Command>copy $(TargetPath) $(NBE_LIBPATH) </Command>
+    </PostBuildEvent>
+    <ClCompile>
+      <PreprocessorDefinitions>LIB_BUILD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
   <ItemGroup />
 </Project>

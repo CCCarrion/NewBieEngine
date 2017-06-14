@@ -3,6 +3,7 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros">
     <RunEnv>$(SolutionDir)..\RunEnv</RunEnv>
+    <NBE_LIBPATH>$(SolutionDir)lib</NBE_LIBPATH>
   </PropertyGroup>
   <PropertyGroup>
     <OutDir>$(SolutionDir)..\Compile\Binary\$(ProjectName)\$(Configuration)\</OutDir>
@@ -14,6 +15,9 @@
   <ItemGroup>
     <BuildMacro Include="RunEnv">
       <Value>$(RunEnv)</Value>
+    </BuildMacro>
+    <BuildMacro Include="NBE_LIBPATH">
+      <Value>$(NBE_LIBPATH)</Value>
     </BuildMacro>
   </ItemGroup>
 </Project>
