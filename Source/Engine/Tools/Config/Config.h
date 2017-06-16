@@ -21,10 +21,22 @@
 #endif
 */
 #pragma endregion 
+/**    ifndef def end  Temp **/
+#pragma region (headTemp)
+//#ifndef __Config_h__
+//#define __Config_h__
+//
+//#endif
+#pragma endregion
+
 
 /**    Define NBE NameSpace   **/
-#define NBE_NS_COMMON namespace nbe
-#define NBE_NS_OS namespace nbe_os
+#define NBE_NS_COMMON namespace NBE
+#define NBE_NS_OS namespace NBE::OS
+#define NBE_NS_Core namespace NBE::Core
+NBE_NS_COMMON{}
+NBE_NS_OS{}
+NBE_NS_Core{}
 
  
 

@@ -38,6 +38,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Util", "Util", "{B426342A-9
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Util", "Engine\Tools\Util\Util.vcxproj", "{96D2C202-AA69-46E9-877A-2FAE2686ED6E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Interface", "Interface", "{5EE77127-67E6-422A-AACE-665327C7384D}"
+	ProjectSection(SolutionItems) = preProject
+		Engine\xPlatform\Interface\NBE_Interface_OS.h = Engine\xPlatform\Interface\NBE_Interface_OS.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -95,5 +100,6 @@ Global
 		{EC63DA6E-54C3-474B-8F37-522848D06C4F} = {33F69E08-3AD5-4149-9665-96CFC66E5E3A}
 		{B426342A-988B-4CBC-AD23-211B5147E5B1} = {B32DA2D2-F96A-4687-8CAE-60CE41F8317F}
 		{96D2C202-AA69-46E9-877A-2FAE2686ED6E} = {B426342A-988B-4CBC-AD23-211B5147E5B1}
+		{5EE77127-67E6-422A-AACE-665327C7384D} = {E91DA5EC-FA2B-4DB3-A667-00A95469904E}
 	EndGlobalSection
 EndGlobal

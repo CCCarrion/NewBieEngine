@@ -115,6 +115,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Class\NBEngine.cpp" />
     <ClCompile Include="Run\Start.cpp" />
   </ItemGroup>
   <ItemGroup>

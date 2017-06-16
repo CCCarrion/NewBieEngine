@@ -15,9 +15,15 @@
 #pragma endregion
 
 
-NBE_NS_OS
+namespace NBE::OS
 {
+	class NBE_API Application
+	{
+	public :
+		Application();
+		~Application();
 
+	};
 }
 
 

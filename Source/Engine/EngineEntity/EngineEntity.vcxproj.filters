@@ -12,6 +12,9 @@
     <ClCompile Include="Run\Start.cpp">
       <Filter>Run</Filter>
     </ClCompile>
+    <ClCompile Include="Class\NBEngine.cpp">
+      <Filter>Class</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Class\NBEngine.h">
