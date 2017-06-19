@@ -19,4 +19,9 @@
       <Filter>public</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="private\NBE_OS_WIndows.cpp">
+      <Filter>private</Filter>
+    </ClCompile>
+  </ItemGroup>
 </Project>

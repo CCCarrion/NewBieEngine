@@ -22,6 +22,9 @@
     <ClInclude Include="public\NBE_Macro_Windows.h" />
     <ClInclude Include="public\NBE_OS_WIndows.h" />
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="private\NBE_OS_WIndows.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{CF188160-A6C6-4CBE-A01D-2AC709D999F9}</ProjectGuid>
     <RootNamespace>NBE_OS_Windows</RootNamespace>

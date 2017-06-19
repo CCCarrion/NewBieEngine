@@ -23,8 +23,8 @@
 #pragma endregion 
 /**    ifndef def end  Temp **/
 #pragma region (headTemp)
-//#ifndef __Config_h__
-//#define __Config_h__
+//#ifndef __XXX_h__
+//#define __XXX_h__
 //
 //#endif
 #pragma endregion
@@ -40,5 +40,8 @@ NBE_NS_Core{}
 
  
 
+/**    Other config   **/
+#include "NBE_ERROR_Def.h"
+#include "NBE_Struct_Def.h"
 
 #endif

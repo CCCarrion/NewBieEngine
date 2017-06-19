@@ -1,5 +1,6 @@
 #include "NBEngine.h"
 
+
 namespace NBE
 {
 	NBE_Entity::NBE_Entity()

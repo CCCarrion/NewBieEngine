@@ -30,6 +30,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Config", "Config", "{9BC812AB-693E-4114-99F7-84883D1C3362}"
 	ProjectSection(SolutionItems) = preProject
 		Engine\Tools\Config\Config.h = Engine\Tools\Config\Config.h
+		Engine\Tools\Config\NBE_Code_Rule_Def.h = Engine\Tools\Config\NBE_Code_Rule_Def.h
+		Engine\Tools\Config\NBE_ERROR_Def.h = Engine\Tools\Config\NBE_ERROR_Def.h
+		Engine\Tools\Config\NBE_Struct_Def.h = Engine\Tools\Config\NBE_Struct_Def.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{EC63DA6E-54C3-474B-8F37-522848D06C4F}"
@@ -42,6 +45,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Interface", "Interface", "{
 	ProjectSection(SolutionItems) = preProject
 		Engine\xPlatform\Interface\NBE_Interface_OS.h = Engine\xPlatform\Interface\NBE_Interface_OS.h
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Interface", "Interface", "{25D5EE96-24B5-4CDE-AB3A-CC59D0743660}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestC11SmartPointers", "Test\CppFeatureTest\TestC11SmartPointers\TestC11SmartPointers.vcxproj", "{CADBF8D5-66F0-4357-9567-9731CBFAB675}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -83,6 +90,14 @@ Global
 		{96D2C202-AA69-46E9-877A-2FAE2686ED6E}.Release|x64.Build.0 = Release|x64
 		{96D2C202-AA69-46E9-877A-2FAE2686ED6E}.Release|x86.ActiveCfg = Release|Win32
 		{96D2C202-AA69-46E9-877A-2FAE2686ED6E}.Release|x86.Build.0 = Release|Win32
+		{CADBF8D5-66F0-4357-9567-9731CBFAB675}.Debug|x64.ActiveCfg = Debug|x64
+		{CADBF8D5-66F0-4357-9567-9731CBFAB675}.Debug|x64.Build.0 = Debug|x64
+		{CADBF8D5-66F0-4357-9567-9731CBFAB675}.Debug|x86.ActiveCfg = Debug|Win32
+		{CADBF8D5-66F0-4357-9567-9731CBFAB675}.Debug|x86.Build.0 = Debug|Win32
+		{CADBF8D5-66F0-4357-9567-9731CBFAB675}.Release|x64.ActiveCfg = Release|x64
+		{CADBF8D5-66F0-4357-9567-9731CBFAB675}.Release|x64.Build.0 = Release|x64
+		{CADBF8D5-66F0-4357-9567-9731CBFAB675}.Release|x86.ActiveCfg = Release|Win32
+		{CADBF8D5-66F0-4357-9567-9731CBFAB675}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -101,5 +116,7 @@ Global
 		{B426342A-988B-4CBC-AD23-211B5147E5B1} = {B32DA2D2-F96A-4687-8CAE-60CE41F8317F}
 		{96D2C202-AA69-46E9-877A-2FAE2686ED6E} = {B426342A-988B-4CBC-AD23-211B5147E5B1}
 		{5EE77127-67E6-422A-AACE-665327C7384D} = {E91DA5EC-FA2B-4DB3-A667-00A95469904E}
+		{25D5EE96-24B5-4CDE-AB3A-CC59D0743660} = {32D7A0F3-8B78-4030-A72A-9376F9A61DAD}
+		{CADBF8D5-66F0-4357-9567-9731CBFAB675} = {DCF9F0EB-DE38-48A2-8D30-EF226449E06D}
 	EndGlobalSection
 EndGlobal

@@ -8,4 +8,9 @@
       <UniqueIdentifier>{26257f2f-9161-47ac-b3e5-486c72f85c3a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="public\SmartPointer.h">
+      <Filter>public</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>
