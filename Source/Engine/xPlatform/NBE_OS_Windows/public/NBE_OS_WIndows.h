@@ -2,7 +2,10 @@
 #define __NBE_OS_Windows_h__
 
 #include "Engine/Tools/Config/Config.h"
+#include "Engine/Tools/Util/public/SmartPointer.h"
 #include "Engine/xPlatform/Interface/NBE_Interface_OS.h"
+
+#include <Windows.h>
 
 #pragma region LIB_IMPLEMENT(NBE_OS_WIN_IMP)
 
@@ -23,11 +26,11 @@ namespace NBE::OS
 	public :
 		OS_APP_Windows();
 		virtual ~OS_APP_Windows();
-		void LoadConfig(NBE_Engine_Config*) override;
-		type_NBE_ERR CreateApp() override;
+		type_NBE_ERR CreateApp(const NBE_Engine_Config&) override;
 
 	private:
-		NBE_Engine_Config* m_g_pCfg;
+		LRESULT CALLBACK WndCreateProc(HWND hwnd, UINT Message, WPARAM wParam, LPARAM lParam);;
+		LRESULT CALLBACK WndProc(HWND hwnd, UINT Message, WPARAM wParam, LPARAM lParam);
 	};
 }
 

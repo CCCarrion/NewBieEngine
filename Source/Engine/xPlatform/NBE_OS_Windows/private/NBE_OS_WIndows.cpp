@@ -13,12 +13,22 @@ namespace NBE::OS
 
 	}
 
-	type_NBE_ERR OS_APP_Windows::CreateApp()
+	type_NBE_ERR OS_APP_Windows::CreateApp(const NBE_Engine_Config& cfg)
+	{
+		HINSTANCE hInstance = GetModuleHandle(nullptr);
+
+		WNDCLASSEX wc = {};
+		wc.cbSize = sizeof(WNDCLASSEX);
+		wc.style = CS_VREDRAW | CS_HREDRAW;
+		
+	}
+
+	LRESULT CALLBACK OS_APP_Windows::WndCreateProc(HWND hwnd, UINT Message, WPARAM wParam, LPARAM lParam)
 	{
 
 	}
 
-	void OS_APP_Windows::LoadConfig(NBE_Engine_Config* pCfg)
+	LRESULT CALLBACK OS_APP_Windows::WndProc(HWND hwnd, UINT Message, WPARAM wParam, LPARAM lParam)
 	{
 
 	}

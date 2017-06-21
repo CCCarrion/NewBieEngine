@@ -5,12 +5,12 @@
 
 namespace NBE::OS
 {
+
 	class OS_APP_Interface
 	{
 	public:
 		virtual ~OS_APP_Interface()=0 {};
-		virtual void LoadConfig(NBE_Engine_Config*) = 0;
-		virtual type_NBE_ERR CreateApp() = 0;
+		virtual type_NBE_ERR CreateApp(const NBE_Engine_Config&) = 0;
 
 	private:
 		
