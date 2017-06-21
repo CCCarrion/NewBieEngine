@@ -5,6 +5,7 @@
   <PropertyGroup>
     <OutDir>$(SolutionDir)..\Compile\Binary\$(ProjectName)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)..\Compile\Linker\$(ProjectName)\$(Configuration)\</IntDir>
+    <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup>
     <PostBuildEvent>
