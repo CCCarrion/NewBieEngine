@@ -33,6 +33,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Config", "Config", "{9BC812
 		Engine\Tools\Config\NBE_Code_Rule_Def.h = Engine\Tools\Config\NBE_Code_Rule_Def.h
 		Engine\Tools\Config\NBE_ERROR_Def.h = Engine\Tools\Config\NBE_ERROR_Def.h
 		Engine\Tools\Config\NBE_Struct_Def.h = Engine\Tools\Config\NBE_Struct_Def.h
+		Engine\Tools\Config\NBE_Type_Def.h = Engine\Tools\Config\NBE_Type_Def.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{EC63DA6E-54C3-474B-8F37-522848D06C4F}"
