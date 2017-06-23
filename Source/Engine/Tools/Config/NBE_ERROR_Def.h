@@ -5,7 +5,7 @@
 typedef  long long type_NBE_ERR;
 
 //No Error Flag
-#define NBE_OK 0;
+#define NBE_OK 0LL;
 
 //OS Error
 

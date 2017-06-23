@@ -2,6 +2,30 @@
 
 namespace NBE::OS
 {
+#pragma region Windows App Massage Process
+
+	LRESULT CALLBACK WndProc(HWND hwnd, UINT Message, WPARAM wParam, LPARAM lParam)
+	{
+		// PlatformWin* pWin = reinterpret_cast<PlatformWin*>(GetWindowLongPtr(hwnd, GWLP_USERDATA));
+		
+	}
+
+	LRESULT CALLBACK WndCreateProc(HWND hwnd, UINT Message, WPARAM wParam, LPARAM lParam)
+	{
+		if (WM_CREATE == Message)
+		{
+			CREATESTRUCT* pCreate = reinterpret_cast<CREATESTRUCT*>(lParam);
+			SetWindowLongPtr(hwnd, GWLP_USERDATA, reinterpret_cast<LONG_PTR>(pCreate->lpCreateParams));
+			SetWindowLongPtr(hwnd, GWLP_WNDPROC, reinterpret_cast<LONG_PTR>(WndProc));
+			return S_OK;
+		}
+		return DefWindowProc(hwnd, Message, wParam, lParam);
+	}
+
+
+#pragma endregion
+
+
 
 	OS_APP_Windows::OS_APP_Windows()
 	{
@@ -20,17 +44,47 @@ namespace NBE::OS
 		WNDCLASSEX wc = {};
 		wc.cbSize = sizeof(WNDCLASSEX);
 		wc.style = CS_VREDRAW | CS_HREDRAW;
-		
+		wc.lpfnWndProc = WndCreateProc;
+		wc.hInstance = hInstance;
+		wc.hCursor = LoadCursor(NULL, IDC_ARROW);
+		wc.lpszClassName = cfg.appName.c_str();
+		wc.hIcon = LoadIcon(nullptr, IDC_ICON); //TODO:config indicate the path and load;
+		RegisterClassEx(&wc);
+
+		RECT windowRect = { 0,0,static_cast<LONG>(cfg.width),static_cast<LONG>(cfg.height) };
+		AdjustWindowRect(&windowRect, WS_OVERLAPPEDWINDOW, FALSE);
+
+		m_hwnd = CreateWindow(
+			wc.lpszClassName,
+			wc.lpszClassName,
+			WS_OVERLAPPEDWINDOW,
+			CW_USEDEFAULT,
+			CW_USEDEFAULT,
+			windowRect.right - windowRect.left,
+			windowRect.bottom - windowRect.top,
+			nullptr,	//parent window
+			nullptr,	//menu handle (no)
+			hInstance,
+			nullptr		//user class handle the msg
+		);
+
+		return NBE_OK;
 	}
 
-	LRESULT CALLBACK OS_APP_Windows::WndCreateProc(HWND hwnd, UINT Message, WPARAM wParam, LPARAM lParam)
+	void OS_APP_Windows::Tick()
 	{
+		//Dispatch Msg to proc
+		MSG msg;
+		while (PeekMessage(&msg,0,0,0,PM_REMOVE))
+		{
+			TranslateMessage(&msg);
+			DispatchMessage(&msg);
+		}
+
 
 	}
 
-	LRESULT CALLBACK OS_APP_Windows::WndProc(HWND hwnd, UINT Message, WPARAM wParam, LPARAM lParam)
-	{
 
-	}
+
 
 }

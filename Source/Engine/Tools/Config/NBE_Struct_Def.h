@@ -7,7 +7,8 @@
 
 struct NBE_Engine_Config
 {
-	NBE_String appName;
+	NBE_WString appName;
+
 	NBE_type_size width;
 	NBE_type_size height;
 
