@@ -44,12 +44,15 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Util", "Engine\Tools\Util\U
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Interface", "Interface", "{5EE77127-67E6-422A-AACE-665327C7384D}"
 	ProjectSection(SolutionItems) = preProject
+		Engine\xPlatform\Interface\NBE_Device_Input.h = Engine\xPlatform\Interface\NBE_Device_Input.h
 		Engine\xPlatform\Interface\NBE_Interface_OS.h = Engine\xPlatform\Interface\NBE_Interface_OS.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Interface", "Interface", "{25D5EE96-24B5-4CDE-AB3A-CC59D0743660}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestC11SmartPointers", "Test\CppFeatureTest\TestC11SmartPointers\TestC11SmartPointers.vcxproj", "{CADBF8D5-66F0-4357-9567-9731CBFAB675}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Core", "Engine\Core\Core.vcxproj", "{82E6AF60-2124-4675-9822-21B5F407815B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -99,6 +102,14 @@ Global
 		{CADBF8D5-66F0-4357-9567-9731CBFAB675}.Release|x64.Build.0 = Release|x64
 		{CADBF8D5-66F0-4357-9567-9731CBFAB675}.Release|x86.ActiveCfg = Release|Win32
 		{CADBF8D5-66F0-4357-9567-9731CBFAB675}.Release|x86.Build.0 = Release|Win32
+		{82E6AF60-2124-4675-9822-21B5F407815B}.Debug|x64.ActiveCfg = Debug|x64
+		{82E6AF60-2124-4675-9822-21B5F407815B}.Debug|x64.Build.0 = Debug|x64
+		{82E6AF60-2124-4675-9822-21B5F407815B}.Debug|x86.ActiveCfg = Debug|Win32
+		{82E6AF60-2124-4675-9822-21B5F407815B}.Debug|x86.Build.0 = Debug|Win32
+		{82E6AF60-2124-4675-9822-21B5F407815B}.Release|x64.ActiveCfg = Release|x64
+		{82E6AF60-2124-4675-9822-21B5F407815B}.Release|x64.Build.0 = Release|x64
+		{82E6AF60-2124-4675-9822-21B5F407815B}.Release|x86.ActiveCfg = Release|Win32
+		{82E6AF60-2124-4675-9822-21B5F407815B}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -119,5 +130,6 @@ Global
 		{5EE77127-67E6-422A-AACE-665327C7384D} = {E91DA5EC-FA2B-4DB3-A667-00A95469904E}
 		{25D5EE96-24B5-4CDE-AB3A-CC59D0743660} = {32D7A0F3-8B78-4030-A72A-9376F9A61DAD}
 		{CADBF8D5-66F0-4357-9567-9731CBFAB675} = {DCF9F0EB-DE38-48A2-8D30-EF226449E06D}
+		{82E6AF60-2124-4675-9822-21B5F407815B} = {EC63DA6E-54C3-474B-8F37-522848D06C4F}
 	EndGlobalSection
 EndGlobal

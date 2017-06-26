@@ -6,8 +6,21 @@ namespace NBE::OS
 
 	LRESULT CALLBACK WndProc(HWND hwnd, UINT Message, WPARAM wParam, LPARAM lParam)
 	{
-		// PlatformWin* pWin = reinterpret_cast<PlatformWin*>(GetWindowLongPtr(hwnd, GWLP_USERDATA));
+		OS_APP_Windows* app_win = reinterpret_cast<OS_APP_Windows*>(GetWindowLongPtr(hwnd, GWLP_USERDATA));
+		switch (Message)
+		{
+		case WM_KEYDOWN:
+
+			break;
+		case WM_KEYUP:
+
+			break;
+        default:
+
+            break;
+		}
 		
+		return DefWindowProc(hwnd, Message, wParam, lParam);
 	}
 
 	LRESULT CALLBACK WndCreateProc(HWND hwnd, UINT Message, WPARAM wParam, LPARAM lParam)
@@ -65,7 +78,7 @@ namespace NBE::OS
 			nullptr,	//parent window
 			nullptr,	//menu handle (no)
 			hInstance,
-			nullptr		//user class handle the msg
+			this		//user class handle the msg
 		);
 
 		return NBE_OK;

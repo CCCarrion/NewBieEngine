@@ -11,7 +11,7 @@ namespace NBE::OS
 	public:
 		virtual ~OS_APP_Interface()=0 {};
 		virtual type_NBE_ERR CreateApp(const NBE_Engine_Config&) = 0;
-		virtual void Update();
+		virtual void Tick();
 
 		 
 	private:
