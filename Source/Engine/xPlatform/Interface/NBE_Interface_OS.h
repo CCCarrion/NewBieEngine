@@ -3,23 +3,31 @@
 
 #include <Engine/Tools/Config/Config.h>
 
-namespace NBE::OS
-{
+#pragma region LIB_IMPLEMENT(NBE_OS_IMP)
 
-	class OS_APP_Interface
-	{
-	public:
-		virtual ~OS_APP_Interface()=0 {};
-		virtual type_NBE_ERR CreateApp(const NBE_Engine_Config&) = 0;
-		virtual void Tick();
-
-		 
-	private:
-		
-	};
-
-
-	
-}
-
+#undef NBE_API
+#if defined(LIB_BUILD) && defined(NBE_OS_IMP)
+#define NBE_API DLLEXPORT
+#else
+#define NBE_API DLLIMPORT
 #endif
+
+#pragma endregion
+
+NBE_NS_OS_START
+
+        class NBE_API OS_APP_Interface
+        {
+        public:
+            virtual ~OS_APP_Interface() = 0 {};
+            virtual type_NBE_ERR CreateApp(const NBE_Engine_Config&) = 0;
+            virtual void Tick() = 0;
+
+
+        private:
+
+        };
+
+
+NBE_NS_OS_END
+#endif 

@@ -2,7 +2,7 @@
 #define __NBE_Struct_Def_h__
 
 #include "NBE_Type_Def.h"
-#include "Engine/Tool/Util/public/String"
+#include "Engine/Tools/Util/public/String.h"
 
 
 struct NBE_Engine_Config
@@ -12,6 +12,6 @@ struct NBE_Engine_Config
 	NBE_type_size width;
 	NBE_type_size height;
 
-}
+};
 
 #endif

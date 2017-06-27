@@ -1,8 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="1">
+    <Filter Include="public">
       <UniqueIdentifier>{5e699b0f-fa8d-4a62-97c7-8584d33a3dd4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="private">
+      <UniqueIdentifier>{3b64ceb0-9247-42e7-90e4-bc107a718da7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="public\Input">
+      <UniqueIdentifier>{8093c6e2-c6b9-46ba-85a5-b424cc68ebca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="public\Event">
+      <UniqueIdentifier>{91009c5b-071f-45ba-bc23-56068fbd2e62}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="public\Input\InputEvent.h">
+      <Filter>public\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="public\Input\KeyState.h">
+      <Filter>public\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="public\Event\EventSystem.h">
+      <Filter>public\Event</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -112,6 +112,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="public\Event\EventSystem.h" />
+    <ClInclude Include="public\Input\InputEvent.h" />
+    <ClInclude Include="public\Input\KeyState.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

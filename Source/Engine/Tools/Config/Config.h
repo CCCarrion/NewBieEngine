@@ -34,9 +34,20 @@
 #define NBE_NS_COMMON namespace NBE
 #define NBE_NS_OS namespace NBE::OS
 #define NBE_NS_Core namespace NBE::Core
-NBE_NS_COMMON{}
-NBE_NS_OS{}
-NBE_NS_Core{}
+
+#define NBE_NS_COMMON_START namespace NBE {
+#define NBE_NS_COMMON_END }
+#define _NBE_NS_COMMON NBE::
+#define NBE_NS_OS_START NBE_NS_COMMON_START namespace OS{
+#define NBE_NS_OS_END NBE_NS_COMMON_END }
+#define _NBE_NS_OS NBE::OS::
+#define NBE_NS_Core_START NBE_NS_COMMON_START namespace Core{
+#define NBE_NS_Core_END NBE_NS_COMMON_END }
+#define _NBE_NS_Core NBE::Core::
+
+//NBE_NS_COMMON{}
+//NBE_NS_OS{}
+//NBE_NS_Core{}
 
  
 
