@@ -45,9 +45,9 @@
 #define NBE_NS_Core_END NBE_NS_COMMON_END }
 #define _NBE_NS_Core NBE::Core::
 
-//NBE_NS_COMMON{}
-//NBE_NS_OS{}
-//NBE_NS_Core{}
+NBE_NS_COMMON{}
+NBE_NS_OS{}
+NBE_NS_Core{}
 
  
 

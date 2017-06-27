@@ -10,19 +10,6 @@
 
 #include <windows.h>
 
-#pragma region LIB_IMPLEMENT(NBE_OS_IMP)
-
-#undef NBE_API
-#if defined(LIB_BUILD) && defined(NBE_OS_IMP)
-#define NBE_API DLLEXPORT
-#else
-#define NBE_API DLLIMPORT
-#endif
-
-#pragma endregion
-
-
-
 NBE_NS_OS_START
 	class OS_APP_Windows : public OS_APP_Interface
 	{
@@ -30,6 +17,7 @@ NBE_NS_OS_START
 		OS_APP_Windows();
 		virtual ~OS_APP_Windows();
 		type_NBE_ERR CreateApp(const NBE_Engine_Config&) override;
+		type_NBE_ERR ShowCanvas() override;
 		void Tick() override;
 
 	private:

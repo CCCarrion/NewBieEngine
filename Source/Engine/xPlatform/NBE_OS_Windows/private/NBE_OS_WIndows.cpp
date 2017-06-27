@@ -97,6 +97,11 @@ namespace NBE::OS
 
 	}
 
+	type_NBE_ERR OS_APP_Windows::ShowCanvas()
+	{
+		ShowWindow(m_hwnd, SW_SHOWNORMAL);
+		return S_OK;
+	}
 
 
 

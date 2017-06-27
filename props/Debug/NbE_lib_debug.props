@@ -9,7 +9,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup>
     <PostBuildEvent>
-      <Command>copy $(TargetPath) $(NBE_LIBPATH) </Command>
+      <Command>copy $(TargetDir)$(ProjectName).*  $(NBE_LIBPATH) </Command>
     </PostBuildEvent>
     <ClCompile>
       <PreprocessorDefinitions>LIB_BUILD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
