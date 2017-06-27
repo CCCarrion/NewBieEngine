@@ -24,7 +24,7 @@
 
 
 NBE_NS_OS_START
-	class NBE_API OS_APP_Windows : public OS_APP_Interface
+	class OS_APP_Windows : public OS_APP_Interface
 	{
 	public :
 		OS_APP_Windows();
