@@ -9,7 +9,7 @@ void AppStart()
 {
     using NBE_NS_OS;
 
-    OS_APP_Windows* pApp = new OS_APP_Windows();
+    OS_APP_Interface* pApp = NBE_CREATE(OS_APP_Interface);
     NBE_Engine_Config cfg = {};
     cfg.height = 500;
     cfg.width = 500;

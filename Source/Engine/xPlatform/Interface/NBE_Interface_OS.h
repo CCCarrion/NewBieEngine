@@ -2,6 +2,7 @@
 #define __NBE_Interface_OS_h__
 
 #include <Engine/Tools/Config/Config.h>
+#include <Engine/Tools/Util/public/Smartpointer.h>
 
 #pragma region LIB_IMPLEMENT(NBE_OS_IMP)
 
@@ -16,7 +17,7 @@
 
 NBE_NS_OS_START
 
-        class NBE_API OS_APP_Interface
+        class  OS_APP_Interface
         {
         public:
             virtual ~OS_APP_Interface() = 0 {};
@@ -28,7 +29,7 @@ NBE_NS_OS_START
         private:
 
         };
-
+NBE_Ptr_Typedef(OS_APP_Interface)
 
 NBE_NS_OS_END
 #endif 

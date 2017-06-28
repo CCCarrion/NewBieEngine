@@ -18,9 +18,15 @@
     <ClInclude Include="public\NBE_Macro_Windows.h">
       <Filter>public</Filter>
     </ClInclude>
+    <ClInclude Include="private\OS_APP_Windows.h">
+      <Filter>private</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="private\NBE_OS_WIndows.cpp">
+      <Filter>private</Filter>
+    </ClCompile>
+    <ClCompile Include="private\OS_APP_Windows.cpp">
       <Filter>private</Filter>
     </ClCompile>
   </ItemGroup>

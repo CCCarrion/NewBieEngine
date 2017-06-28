@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="public">
+      <UniqueIdentifier>{03cbd0e0-7f7f-4ea1-97e4-0e854aca1e85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="private">
+      <UniqueIdentifier>{afa84e18-1580-4ff8-8e96-b090a7f9e09e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="private\Head">
+      <UniqueIdentifier>{28e8e3e7-682b-4270-ae93-aab8aa6b757d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="private\Imp">
+      <UniqueIdentifier>{fb32d2d1-fca0-4320-bdbd-fc926e0ae559}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="public\NBE_Renderer_DX12.h">
+      <Filter>public</Filter>
+    </ClInclude>
+    <ClInclude Include="private\Head\Render_Engine_DX12.h">
+      <Filter>private\Head</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="private\NBE_Renderer_DX12.cpp">
+      <Filter>private</Filter>
+    </ClCompile>
+    <ClCompile Include="private\Imp\Render_Engine_DX12.cpp">
+      <Filter>private\Imp</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -9,12 +9,14 @@
 /**    Include Platform Macro File      **/
 #ifdef NBE_OS_WIN
 #include "Engine/xPlatform/NBE_OS_Windows/public/NBE_Macro_Windows.h"
+#define OS_HEAD "Engine/xPlatform/NBE_OS_Windows/public/NBE_OS_Windows.h"
 #endif // NBE_OS_WIN
 
 /**    Define Interface Attribute  Temp **/
-#pragma region LIB_IMPLEMENT(lib_name)
+#pragma region DLL_IMPLEMENT(DLL_name)
 /*
-#if defined(LIB_BUILD) && defined(lib_name)	   
+#undef NBE_API
+#if defined(DLL_BUILD) && defined(DLL_name)	   
 #define NBE_API DLLEXPORT					
 #else											
 #define NBE_API DLLIMPORT					
@@ -28,12 +30,27 @@
 //
 //#endif
 #pragma endregion
+/**    Module Create Func   **/
+#define NBE_LIB_CREATE_DECLARE(InterfaceClass)   \
+extern "C" InterfaceClass* Create##InterfaceClass();
 
+#define NBE_DLL_CREATE_DECLARE(InterfaceClass)   \
+extern "C" NBE_API InterfaceClass* Create##InterfaceClass();
+
+#define NBE_CREATE_IMPLEMENT(InterfaceClass,ImpClass)           \
+extern "C" InterfaceClass* Create##InterfaceClass()             \
+{                                                               \
+   return new ImpClass();                                       \
+}
+
+#define NBE_CREATE(InterfaceClass)   \
+Create##InterfaceClass()
 
 /**    Define NBE NameSpace   **/
 #define NBE_NS_COMMON namespace NBE
 #define NBE_NS_OS namespace NBE::OS
 #define NBE_NS_Core namespace NBE::Core
+#define NBE_NS_Render namespace NBE::Render
 
 #define NBE_NS_COMMON_START namespace NBE {
 #define NBE_NS_COMMON_END }
@@ -44,12 +61,14 @@
 #define NBE_NS_Core_START NBE_NS_COMMON_START namespace Core{
 #define NBE_NS_Core_END NBE_NS_COMMON_END }
 #define _NBE_NS_Core NBE::Core::
+#define NBE_NS_Render_START NBE_NS_COMMON_START namespace Render{
+#define NBE_NS_Render_END NBE_NS_COMMON_END }
+#define _NBE_NS_Render NBE::Render::
 
 NBE_NS_COMMON{}
 NBE_NS_OS{}
 NBE_NS_Core{}
-
- 
+NBE_NS_Render{}
 
 /**    Other config   **/
 #include "NBE_ERROR_Def.h"

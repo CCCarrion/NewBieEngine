@@ -49,12 +49,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Interface", "Interface", "{
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Interface", "Interface", "{25D5EE96-24B5-4CDE-AB3A-CC59D0743660}"
+	ProjectSection(SolutionItems) = preProject
+		Engine\RenderEngine\Interface\NBE_Interface_Renderer.h = Engine\RenderEngine\Interface\NBE_Interface_Renderer.h
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestC11SmartPointers", "Test\CppFeatureTest\TestC11SmartPointers\TestC11SmartPointers.vcxproj", "{CADBF8D5-66F0-4357-9567-9731CBFAB675}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Core", "Engine\Core\Core.vcxproj", "{82E6AF60-2124-4675-9822-21B5F407815B}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Step1_OS", "Test\EngineStepTest\Step1_OS\Step1_OS.vcxproj", "{E60D76FE-FDED-477C-9AC4-017FC54C2F8E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NBE_Renderer_DX12", "Engine\RenderEngine\NBE_Renderer_DX12\NBE_Renderer_DX12.vcxproj", "{0548C834-120F-445A-BC94-4C665AAE128A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestMacro", "Test\CppFeatureTest\TestMacro\TestMacro.vcxproj", "{4E7E5EE0-B847-4BF7-813A-0F2BE4B2789E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -120,6 +127,22 @@ Global
 		{E60D76FE-FDED-477C-9AC4-017FC54C2F8E}.Release|x64.Build.0 = Release|x64
 		{E60D76FE-FDED-477C-9AC4-017FC54C2F8E}.Release|x86.ActiveCfg = Release|Win32
 		{E60D76FE-FDED-477C-9AC4-017FC54C2F8E}.Release|x86.Build.0 = Release|Win32
+		{0548C834-120F-445A-BC94-4C665AAE128A}.Debug|x64.ActiveCfg = Debug|x64
+		{0548C834-120F-445A-BC94-4C665AAE128A}.Debug|x64.Build.0 = Debug|x64
+		{0548C834-120F-445A-BC94-4C665AAE128A}.Debug|x86.ActiveCfg = Debug|Win32
+		{0548C834-120F-445A-BC94-4C665AAE128A}.Debug|x86.Build.0 = Debug|Win32
+		{0548C834-120F-445A-BC94-4C665AAE128A}.Release|x64.ActiveCfg = Release|x64
+		{0548C834-120F-445A-BC94-4C665AAE128A}.Release|x64.Build.0 = Release|x64
+		{0548C834-120F-445A-BC94-4C665AAE128A}.Release|x86.ActiveCfg = Release|Win32
+		{0548C834-120F-445A-BC94-4C665AAE128A}.Release|x86.Build.0 = Release|Win32
+		{4E7E5EE0-B847-4BF7-813A-0F2BE4B2789E}.Debug|x64.ActiveCfg = Debug|x64
+		{4E7E5EE0-B847-4BF7-813A-0F2BE4B2789E}.Debug|x64.Build.0 = Debug|x64
+		{4E7E5EE0-B847-4BF7-813A-0F2BE4B2789E}.Debug|x86.ActiveCfg = Debug|Win32
+		{4E7E5EE0-B847-4BF7-813A-0F2BE4B2789E}.Debug|x86.Build.0 = Debug|Win32
+		{4E7E5EE0-B847-4BF7-813A-0F2BE4B2789E}.Release|x64.ActiveCfg = Release|x64
+		{4E7E5EE0-B847-4BF7-813A-0F2BE4B2789E}.Release|x64.Build.0 = Release|x64
+		{4E7E5EE0-B847-4BF7-813A-0F2BE4B2789E}.Release|x86.ActiveCfg = Release|Win32
+		{4E7E5EE0-B847-4BF7-813A-0F2BE4B2789E}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -142,5 +165,7 @@ Global
 		{CADBF8D5-66F0-4357-9567-9731CBFAB675} = {DCF9F0EB-DE38-48A2-8D30-EF226449E06D}
 		{82E6AF60-2124-4675-9822-21B5F407815B} = {EC63DA6E-54C3-474B-8F37-522848D06C4F}
 		{E60D76FE-FDED-477C-9AC4-017FC54C2F8E} = {D84318C4-720C-4D9D-A87E-F3F0E2B1F6CA}
+		{0548C834-120F-445A-BC94-4C665AAE128A} = {32D7A0F3-8B78-4030-A72A-9376F9A61DAD}
+		{4E7E5EE0-B847-4BF7-813A-0F2BE4B2789E} = {DCF9F0EB-DE38-48A2-8D30-EF226449E06D}
 	EndGlobalSection
 EndGlobal

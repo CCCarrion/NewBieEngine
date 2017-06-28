@@ -5,7 +5,17 @@
   <PropertyGroup>
     <OutDir>$(SolutionDir)..\Compile\Binary\$(ProjectName)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)..\Compile\Linker\$(ProjectName)\$(Configuration)\</IntDir>
+    <TargetExt>.dll</TargetExt>
   </PropertyGroup>
-  <ItemDefinitionGroup />
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <PreprocessorDefinitions>DLL_BUILD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <PostBuildEvent>
+      <Command>copy $(TargetDir)$(ProjectName).dll  $(RunEnv)\dll
+copy $(TargetDir)$(ProjectName).pdb  $(RunEnv)\dll
+copy $(TargetDir)$(ProjectName).lib  $(NBE_LibPath)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
   <ItemGroup />
 </Project>
