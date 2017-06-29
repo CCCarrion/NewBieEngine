@@ -15,5 +15,11 @@
     <ClInclude Include="public\String.h">
       <Filter>public</Filter>
     </ClInclude>
+    <ClInclude Include="public\Assert.h">
+      <Filter>public</Filter>
+    </ClInclude>
+    <ClInclude Include="public\Debugger.h">
+      <Filter>public</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

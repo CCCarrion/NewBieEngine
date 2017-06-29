@@ -31,20 +31,22 @@
 //#endif
 #pragma endregion
 /**    Module Create Func   **/
-#define NBE_LIB_CREATE_DECLARE(InterfaceClass)   \
-extern "C" InterfaceClass* Create##InterfaceClass();
+#define NBE_LIB_CREATE_UPtr_DECLARE(InterfaceClass)   \
+extern "C" void Create##InterfaceClassUPtr(InterfaceClass##_UPtr& uptr) ;
 
-#define NBE_DLL_CREATE_DECLARE(InterfaceClass)   \
-extern "C" NBE_API InterfaceClass* Create##InterfaceClass();
+#define NBE_DLL_CREATE_UPtr_DECLARE(InterfaceClass)   \
+extern "C" NBE_API void Create##InterfaceClassUPtr(InterfaceClass##_UPtr& uptr) ;
 
-#define NBE_CREATE_IMPLEMENT(InterfaceClass,ImpClass)           \
-extern "C" InterfaceClass* Create##InterfaceClass()             \
-{                                                               \
-   return new ImpClass();                                       \
+#define NBE_CREATE_UPtr_IMPLEMENT(InterfaceClass,ImpClass)                    \
+extern "C" void Create##InterfaceClassUPtr(InterfaceClass##_UPtr& uptr)       \
+{                                                                             \
+     uptr = NBE_MakeUniquePtr(ImpClass)();                               \
 }
 
-#define NBE_CREATE(InterfaceClass)   \
-Create##InterfaceClass()
+#define NBE_CREATE_UPtr(InterfaceClass,UptrVal)   \
+Create##InterfaceClassUPtr(UptrVal)
+
+
 
 /**    Define NBE NameSpace   **/
 #define NBE_NS_COMMON namespace NBE

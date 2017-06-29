@@ -6,7 +6,7 @@ void AppStart()
 	using NBE_NS_COMMON;
 	//Create Engine Entity
 	NBE_Entity entity;
-	
+    entity.Run();
 }
 
 

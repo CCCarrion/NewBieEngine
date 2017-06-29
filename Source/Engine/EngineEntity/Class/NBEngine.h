@@ -3,10 +3,12 @@
 #include "Engine/Tools/Config/Config.h"
 #include OS_HEAD
 #include "Engine/Tools/Util/public/SmartPointer.h"
+#include "Engine/RenderEngine/Interface/NBE_Interface_Renderer.h"
 
 namespace NBE
 {
 	using NBE_NS_OS;
+    using NBE_NS_Render;
 	class NBE_Entity
 	{
 	public: 
@@ -19,7 +21,7 @@ namespace NBE
 	protected:
         NBE_Engine_Config m_cfg;
         OS_APP_Interface_UPtr m_pApp;
-
+        Render_Engine_Interface_UPtr m_pRenderer;
 	};
 }
 

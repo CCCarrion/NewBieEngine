@@ -6,7 +6,7 @@
 
 NBE_NS_Render_START
 
-NBE_DLL_CREATE_DECLARE(Render_Engine_Interface)
+NBE_DLL_CREATE_UPtr_DECLARE(Render_Engine_Interface)
 
 NBE_NS_Render_END
 

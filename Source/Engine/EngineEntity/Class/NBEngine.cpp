@@ -6,9 +6,11 @@ namespace NBE
 	NBE_Entity::NBE_Entity():m_cfg(),m_pApp(nullptr)
 	{
         
-        m_pApp = OS_APP_Interface_UPtr(NBE_CREATE(OS_APP_Interface));
+        NBE_CREATE_UPtr(OS_APP_Interface,m_pApp);
         LoadCfg();
         m_pApp->CreateApp(m_cfg);
+
+        NBE_CREATE(Render_Engine_Interface, m_pRenderer);
 
 	}
 
@@ -33,6 +35,8 @@ namespace NBE
         m_cfg.appName = NBE_WString(L"NewBie Engine");
         m_cfg.height = 720;
         m_cfg.width = 1080;
+        m_cfg.renderEngineName = NBE_WString(NBE_Render_Engine_Name_DX12);
+
     }
 
 }

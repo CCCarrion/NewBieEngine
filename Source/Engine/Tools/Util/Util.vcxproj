@@ -112,6 +112,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="public\Assert.h" />
+    <ClInclude Include="public\Debugger.h" />
     <ClInclude Include="public\SmartPointer.h" />
     <ClInclude Include="public\String.h" />
   </ItemGroup>

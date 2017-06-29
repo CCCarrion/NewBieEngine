@@ -9,9 +9,10 @@ void AppStart()
 {
     using NBE_NS_OS;
 
-    OS_APP_Interface* pApp = NBE_CREATE(OS_APP_Interface);
+    OS_APP_Interface_UPtr pApp;
+    NBE_CREATE_UPtr(OS_APP_Interface,pApp);
     NBE_Engine_Config cfg = {};
-    cfg.height = 500;
+    cfg.height = 100;
     cfg.width = 500;
     cfg.appName = L"Step1_OS";
     pApp->CreateApp(cfg);
@@ -20,7 +21,6 @@ void AppStart()
     {
         pApp->Tick();
     }
-    delete pApp;
     getchar();
 }
 

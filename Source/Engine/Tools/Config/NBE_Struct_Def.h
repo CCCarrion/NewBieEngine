@@ -4,10 +4,10 @@
 #include "NBE_Type_Def.h"
 #include "Engine/Tools/Util/public/String.h"
 
-
 struct NBE_Engine_Config
 {
 	NBE_WString appName;
+    NBE_WString renderEngineName;
 
 	NBE_type_size width;
 	NBE_type_size height;

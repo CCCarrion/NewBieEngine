@@ -13,11 +13,12 @@ using NBE_WeakPtr = std::weak_ptr<T>;
 template<class T>
 using NBE_UniquePtr = std::unique_ptr<T>;
 
-#define NBE_MakeSharedPtr std::make_shared;
+#define NBE_MakeSharedPtr(ClassName) std::make_shared<##ClassName##>
+#define NBE_MakeUniquePtr(ClassName) std::make_unique<##ClassName##>
 
 //Easy TypeDef for SmartPointer
 #define NBE_Ptr_Typedef(TypeName)                       \
 typedef NBE_UniquePtr<##TypeName##> TypeName##_UPtr;    \
 typedef NBE_SharedPtr<##TypeName##> TypeName##_SPtr;    \
-typedef NBE_WeakPtr<##TypeName##> TypeName##_WPtr;
+typedef NBE_WeakPtr<##TypeName##> TypeName##_WPtr;      
 #endif

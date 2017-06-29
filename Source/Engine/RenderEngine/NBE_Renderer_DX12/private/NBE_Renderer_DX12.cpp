@@ -3,6 +3,6 @@
 
 NBE_NS_Render_START
 
-NBE_CREATE_IMPLEMENT(Render_Engine_Interface,Render_Engine_DX12)
+NBE_CREATE_UPtr_IMPLEMENT(Render_Engine_Interface,Render_Engine_DX12)
 
 NBE_NS_Render_END
