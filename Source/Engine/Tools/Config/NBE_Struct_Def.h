@@ -12,6 +12,8 @@ struct NBE_Engine_Config
 	NBE_type_size width;
 	NBE_type_size height;
 
+    NBE_type_size swapChainCount;
+    
 };
 
 #endif

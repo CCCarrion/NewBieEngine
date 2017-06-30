@@ -17,7 +17,7 @@ public:
     type_NBE_ERR ShowCanvas() override;
     void Tick() override;
 
-    HWND GetAppHandle();
+    void* GetAppHandle() override;
 private:
     HWND m_hwnd;
 };

@@ -113,10 +113,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="private\Head\CommandListManager.h" />
+    <ClInclude Include="private\Head\GPU_MemoryManager_DX12.h" />
     <ClInclude Include="private\Head\Render_Engine_DX12.h" />
     <ClInclude Include="public\NBE_Renderer_DX12.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="private\Imp\CommandListManager.cpp" />
+    <ClCompile Include="private\Imp\GPU_MemoryManager_DX12.cpp" />
     <ClCompile Include="private\Imp\Render_Engine_DX12.cpp" />
     <ClCompile Include="private\NBE_Renderer_DX12.cpp" />
   </ItemGroup>

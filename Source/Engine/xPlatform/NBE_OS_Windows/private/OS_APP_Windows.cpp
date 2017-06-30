@@ -104,9 +104,9 @@ NBE_NS_OS_START
         return S_OK;
     }
 
-    HWND OS_APP_Windows::GetAppHandle()
+    void* OS_APP_Windows::GetAppHandle()
     {
-        return m_hwnd;
+        return (void*)m_hwnd;
     }
 
 

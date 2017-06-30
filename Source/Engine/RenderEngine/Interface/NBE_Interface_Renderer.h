@@ -3,6 +3,7 @@
 
 #include "Config/Config.h"
 #include "Util/public/SmartPointer.h"
+#include "Engine/xPlatform/Interface/NBE_Interface_OS.h"
 
 #pragma region DLL_IMPLEMENT(NBE_RENDERER_IMP)
 #undef NBE_API
@@ -25,20 +26,38 @@ struct NBE_Adapter_Features_Support
 
 };
 
+enum NBE_Format
+{
 
+};
 
+//GPU Memory Manager
+class NBE_API GPU_MemoryManager_Interface
+{
+public :
+    virtual ~GPU_MemoryManager_Interface() = 0 {};
+
+};
+
+NBE_Ptr_Typedef(GPU_MemoryManager_Interface)
+
+//Render Engine Entity
 class NBE_API Render_Engine_Interface
 {
 public :
     virtual ~Render_Engine_Interface() = 0 {};
 
     virtual const NBE_WString& GetRendererName() = 0;
+    virtual type_NBE_ERR CreateRenderEngine(NBE_Engine_Config&, _NBE_NS_OS OS_APP_Interface_WPtr) = 0;
+
 
 public :
     NBE_Adapter_Features_Support m_featureSupport;
+    GPU_MemoryManager_Interface_UPtr m_gpuMemoryManager;
 };
 
 NBE_Ptr_Typedef(Render_Engine_Interface)
+
 
 
 

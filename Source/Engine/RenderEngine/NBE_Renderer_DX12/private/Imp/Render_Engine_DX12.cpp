@@ -1,5 +1,5 @@
 #include "../Head/Render_Engine_DX12.h"
-
+#include "../Head/GPU_MemoryManager_DX12.h"
 
 
 
@@ -8,7 +8,6 @@ NBE_NS_Render_START
 
 Render_Engine_DX12::Render_Engine_DX12()
 {
-    ThrowIfFailed(CreateDeviceInterface());
     CheckAdapterFeature();
 
 }
@@ -24,8 +23,9 @@ const NBE_WString& Render_Engine_DX12::GetRendererName()
     return name;
 }
 
-type_NBE_ERR Render_Engine_DX12::CreateDeviceInterface()
+type_NBE_ERR Render_Engine_DX12::CreateRenderEngine(NBE_Engine_Config & cfg, _NBE_NS_OS OS_APP_Interface_WPtr pApp)
 {
+    //Create Device
     UINT dxgiFactoryFlags = 0;
     ComPtr<IDXGIFactory4> factory;
     ThrowIfFailed(CreateDXGIFactory2(dxgiFactoryFlags, IID_PPV_ARGS(&factory)));
@@ -51,7 +51,7 @@ type_NBE_ERR Render_Engine_DX12::CreateDeviceInterface()
             {
                 m_device.Detach()->Release();
             }
-        }      
+        }
         adapter->Release();
     }
 
@@ -59,6 +59,32 @@ type_NBE_ERR Render_Engine_DX12::CreateDeviceInterface()
     {
         return NBE_ERROR_DX12_NOT_SURPPORT;
     }
+
+    //Check Feature Support
+    CheckAdapterFeature();
+
+    //Create GPU Memory Manager
+    //TODO: Its Temp
+    m_gpuMemoryManager = NBE_MakeUniquePtr(GPU_MemoryManager_DX12)();
+
+
+
+    //Create SwapChain
+    DXGI_SWAP_CHAIN_DESC1 swapChainDesc = {};
+    swapChainDesc.Width = cfg.width;
+    swapChainDesc.Height = cfg.height;
+    swapChainDesc.Format = DXGI_FORMAT_R10G10B10A2_UNORM;
+    swapChainDesc.Scaling = DXGI_SCALING_NONE;
+    swapChainDesc.SampleDesc.Quality = 0;
+    swapChainDesc.SampleDesc.Count = 1;
+    swapChainDesc.BufferUsage = DXGI_USAGE_RENDER_TARGET_OUTPUT;
+    swapChainDesc.BufferCount = cfg.swapChainCount;
+    swapChainDesc.Flags = DXGI_SWAP_CHAIN_FLAG_ALLOW_MODE_SWITCH;
+    swapChainDesc.SwapEffect = DXGI_SWAP_EFFECT_FLIP_SEQUENTIAL;
+#ifdef NBE_OS_WIN
+   // ThrowIfFailed(factory->CreateSwapChainForHwnd()
+#endif // NBE_OS_WIN
+
     return NBE_OK;
 }
 

@@ -40,7 +40,7 @@ extern "C" NBE_API void Create##InterfaceClassUPtr(InterfaceClass##_UPtr& uptr) 
 #define NBE_CREATE_UPtr_IMPLEMENT(InterfaceClass,ImpClass)                    \
 extern "C" void Create##InterfaceClassUPtr(InterfaceClass##_UPtr& uptr)       \
 {                                                                             \
-     uptr = NBE_MakeUniquePtr(ImpClass)();                               \
+     uptr = NBE_MakeUniquePtr(ImpClass)();                                    \
 }
 
 #define NBE_CREATE_UPtr(InterfaceClass,UptrVal)   \
