@@ -1,18 +1,28 @@
 #include "../Head/CommandListManager.h"
 
 NBE_NS_Render_START
-CommanQueue::CommanQueue(D3D12_COMMAND_LIST_TYPE)
+CommandQueue::CommandQueue(D3D12_COMMAND_LIST_TYPE type):
+    m_type(type)
 {
 
 }
 
-CommanQueue::~CommanQueue()
+CommandQueue::~CommandQueue()
 {
 }
 
-void CommanQueue::Create(ID3D12Device *)
+void CommandQueue::Create(ID3D12Device * pDevice)
 {
+    D3D12_COMMAND_QUEUE_DESC QueueDesc = {};
+    QueueDesc.Type = m_type;
+    QueueDesc.NodeMask = 1;
+    pDevice->CreateCommandQueue(&QueueDesc, IID_PPV_ARGS(&m_pCommandQueue));
 
+}
+
+ID3D12CommandQueue * CommandQueue::GetCommandQueue()
+{
+    return m_pCommandQueue.Get();
 }
 
 
@@ -32,6 +42,11 @@ m_copyQueue(D3D12_COMMAND_LIST_TYPE_COPY)
 CommandListManager::~CommandListManager()
 {
 
+}
+
+ID3D12CommandQueue * CommandListManager::GetGraphicQueue()
+{
+    return m_graphicQueue.GetCommandQueue();
 }
 
 

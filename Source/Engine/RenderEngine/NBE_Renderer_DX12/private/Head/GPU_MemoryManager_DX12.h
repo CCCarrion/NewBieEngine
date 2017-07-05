@@ -12,8 +12,9 @@ public :
 
 
 
-};
+private:
 
+};
 
 NBE_NS_Render_END
 #endif

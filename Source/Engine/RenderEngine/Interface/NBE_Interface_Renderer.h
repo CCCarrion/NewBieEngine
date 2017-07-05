@@ -41,6 +41,8 @@ public :
 
 NBE_Ptr_Typedef(GPU_MemoryManager_Interface)
 
+
+
 //Render Engine Entity
 class NBE_API Render_Engine_Interface
 {
@@ -48,7 +50,7 @@ public :
     virtual ~Render_Engine_Interface() = 0 {};
 
     virtual const NBE_WString& GetRendererName() = 0;
-    virtual type_NBE_ERR CreateRenderEngine(NBE_Engine_Config&, _NBE_NS_OS OS_APP_Interface_WPtr) = 0;
+    virtual type_NBE_ERR CreateRenderEngine(NBE_Engine_Config&, _NBE_NS_OS OS_APP_Interface*) = 0;
 
 
 public :

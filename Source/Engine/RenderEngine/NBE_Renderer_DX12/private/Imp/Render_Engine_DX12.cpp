@@ -23,7 +23,7 @@ const NBE_WString& Render_Engine_DX12::GetRendererName()
     return name;
 }
 
-type_NBE_ERR Render_Engine_DX12::CreateRenderEngine(NBE_Engine_Config & cfg, _NBE_NS_OS OS_APP_Interface_WPtr pApp)
+type_NBE_ERR Render_Engine_DX12::CreateRenderEngine(NBE_Engine_Config & cfg, _NBE_NS_OS OS_APP_Interface* pApp)
 {
     //Create Device
     UINT dxgiFactoryFlags = 0;
@@ -66,7 +66,7 @@ type_NBE_ERR Render_Engine_DX12::CreateRenderEngine(NBE_Engine_Config & cfg, _NB
     //Create GPU Memory Manager
     //TODO: Its Temp
     m_gpuMemoryManager = NBE_MakeUniquePtr(GPU_MemoryManager_DX12)();
-
+    m_cmdListManager = NBE_MakeUniquePtr(CommandListManager)(m_device,m_gpuMemoryManager);
 
 
     //Create SwapChain
@@ -82,8 +82,14 @@ type_NBE_ERR Render_Engine_DX12::CreateRenderEngine(NBE_Engine_Config & cfg, _NB
     swapChainDesc.Flags = DXGI_SWAP_CHAIN_FLAG_ALLOW_MODE_SWITCH;
     swapChainDesc.SwapEffect = DXGI_SWAP_EFFECT_FLIP_SEQUENTIAL;
 #ifdef NBE_OS_WIN
-   // ThrowIfFailed(factory->CreateSwapChainForHwnd()
+    ThrowIfFailed(factory->CreateSwapChainForHwnd(m_cmdListManager->GetGraphicQueue(), (HWND)pApp->GetAppHandle(), &swapChainDesc, nullptr, nullptr, &m_swapChain));
 #endif // NBE_OS_WIN
+    for (uint32_t i = 0; i < cfg.swapChainCount; i++)
+    {
+        //Ceate Buffer Decriptor for swapChain
+
+    }
+
 
     return NBE_OK;
 }
