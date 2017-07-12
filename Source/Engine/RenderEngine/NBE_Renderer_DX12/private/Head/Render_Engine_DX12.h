@@ -33,6 +33,7 @@ private :
     ComPtr<ID3D12Device> m_device;
     CommandListManager_UPtr m_cmdListManager;
     ComPtr<IDXGISwapChain1> m_swapChain;
+
 };
 NBE_NS_Render_END
 

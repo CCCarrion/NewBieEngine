@@ -21,15 +21,27 @@ NBE_NS_Render_START
 #define NBE_Render_Engine_Name_DX12 L"DX12"
 #define NBE_Render_Engine_Name_Vulkan L"Vulkan"
 
+//Support Feature Struct
 struct NBE_Adapter_Features_Support
 {
 
 };
 
-enum NBE_Format
+enum NBE_Texture_Format
 {
 
 };
+
+//GPU Resource Interface
+class NBE_API GPU_Resource_Interface
+{
+public :
+
+    virtual ~GPU_Resource_Interface() = 0 {};
+    virtual type_NBE_ERR Create();
+
+};
+NBE_Ptr_Typedef(GPU_Resource_Interface)
 
 //GPU Memory Manager
 class NBE_API GPU_MemoryManager_Interface

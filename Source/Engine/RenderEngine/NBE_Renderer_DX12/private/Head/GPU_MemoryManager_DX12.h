@@ -6,10 +6,20 @@
 
 NBE_NS_Render_START
 
+class GPU_Resource_DX12 :public GPU_Resource_Interface
+{
+public:
+    GPU_Resource_DX12();
+    ~GPU_Resource_DX12() override;
+    type_NBE_ERR Create() override;
+};
+
+
 class GPU_MemoryManager_DX12 : public GPU_MemoryManager_Interface
 {
 public :
-
+    GPU_MemoryManager_DX12();
+    ~GPU_MemoryManager_DX12() override;
 
 
 private:

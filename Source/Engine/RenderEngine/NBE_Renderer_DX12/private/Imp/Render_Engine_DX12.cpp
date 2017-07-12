@@ -86,7 +86,7 @@ type_NBE_ERR Render_Engine_DX12::CreateRenderEngine(NBE_Engine_Config & cfg, _NB
 #endif // NBE_OS_WIN
     for (uint32_t i = 0; i < cfg.swapChainCount; i++)
     {
-        //Ceate Buffer Decriptor for swapChain
+        //Create Buffer Descriptor for swapChain
 
     }
 
