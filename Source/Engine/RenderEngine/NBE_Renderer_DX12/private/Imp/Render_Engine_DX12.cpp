@@ -84,10 +84,13 @@ type_NBE_ERR Render_Engine_DX12::CreateRenderEngine(NBE_Engine_Config & cfg, _NB
 #ifdef NBE_OS_WIN
     ThrowIfFailed(factory->CreateSwapChainForHwnd(m_cmdListManager->GetGraphicQueue(), (HWND)pApp->GetAppHandle(), &swapChainDesc, nullptr, nullptr, &m_swapChain));
 #endif // NBE_OS_WIN
+    m_listSwapChainRes.resize(cfg.swapChainCount);
     for (uint32_t i = 0; i < cfg.swapChainCount; i++)
     {
         //Create Buffer Descriptor for swapChain
-
+        ID3D12Resource* frameRes;
+        ThrowIfFailed(m_swapChain->GetBuffer(i, IID_PPV_ARGS(&frameRes)));
+        
     }
 
 

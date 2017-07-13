@@ -3,7 +3,7 @@
 
 #include <vector>
 template<class T>
-using NBE_List = vector<T>;
+using NBE_Vector = vector<T>;
 
 
 #endif

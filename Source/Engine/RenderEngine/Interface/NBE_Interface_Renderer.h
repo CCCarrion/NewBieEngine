@@ -29,7 +29,24 @@ struct NBE_Adapter_Features_Support
 
 enum NBE_Texture_Format
 {
+    NBE_TEXTURE_FORMAT_UNKNOWN = 0,
 
+
+
+   
+};
+
+enum NBE_Resource_Type
+{
+
+};
+
+enum NBE_Resource_State
+{
+    NBE_RESOURCE_STATE_UNKNOWN = 0,
+    NBE_RESOURCE_STATE_NORMAL,
+    NBE_RESOURCE_STATE_RENDERING,
+    NBE_RESOURCE_STATE_PRESENT
 };
 
 //GPU Resource Interface
@@ -40,6 +57,13 @@ public :
     virtual ~GPU_Resource_Interface() = 0 {};
     virtual type_NBE_ERR Create();
 
+protected :
+    NBE_type_size m_width;
+    NBE_type_size m_height;
+    NBE_type_size m_depth;
+    NBE_Texture_Format m_format;
+    NBE_Resource_Type m_resType;
+    NBE_Resource_State m_currentState;
 };
 NBE_Ptr_Typedef(GPU_Resource_Interface)
 

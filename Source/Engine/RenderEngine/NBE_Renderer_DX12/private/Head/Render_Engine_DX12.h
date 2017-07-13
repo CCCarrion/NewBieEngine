@@ -3,6 +3,7 @@
 
 #include "Config/Config.h"
 #include "Engine/RenderEngine/Interface/NBE_Interface_Renderer.h"
+#include "Util/public/Container.h"
 
 #include <windows.h>
 #include "d3d12.h"
@@ -33,6 +34,7 @@ private :
     ComPtr<ID3D12Device> m_device;
     CommandListManager_UPtr m_cmdListManager;
     ComPtr<IDXGISwapChain1> m_swapChain;
+    NBE_Vector<GPU_Resource_DX12> m_listSwapChainRes;
 
 };
 NBE_NS_Render_END

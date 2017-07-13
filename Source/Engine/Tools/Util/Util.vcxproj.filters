@@ -21,5 +21,8 @@
     <ClInclude Include="public\Debugger.h">
       <Filter>public</Filter>
     </ClInclude>
+    <ClInclude Include="public\Container.h">
+      <Filter>public</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
