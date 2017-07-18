@@ -27,18 +27,40 @@ struct NBE_Adapter_Features_Support
 
 };
 
-enum NBE_Texture_Format
+enum NBE_Resource_Format
 {
-    NBE_TEXTURE_FORMAT_UNKNOWN = 0,
-
+    NBE_RESOURCE_FORMAT_UNKNOWN = 0,
+    NBE_RESOURCE_FORMAT_D24S8,//Depth 24 Stencil 8 
 
 
    
 };
 
+struct NBE_Pixel_Value
+{
+    NBE_Resource_Format format;
+
+    union 
+    {
+        float Color[4] ;
+        struct 
+        {
+            float depth ;
+            UINT  stencil ;
+        } DS_Value;
+    };
+};
+
+enum NBE_Resource_Layout
+{
+    NBE_RESOURCE_LAYOUT_UNKNOWN = 0,
+};
+
 enum NBE_Resource_Type
 {
-
+    NBE_RESOURCE_TYPE_UNKNOWN = 0,
+    NBE_RESOURCE_TYPE_RT,//Render Target
+    NBE_RESOURCE_TYPE_DS,//DepthStencil Buffer
 };
 
 enum NBE_Resource_State
@@ -49,6 +71,29 @@ enum NBE_Resource_State
     NBE_RESOURCE_STATE_PRESENT
 };
 
+//Resource property
+struct  NBE_Resource_Descriptor
+{
+    NBE_Resource_Type resType;
+
+    union 
+    {
+        struct {
+            NBE_type_size width;
+            NBE_type_size height;
+            NBE_type_size depth;
+            NBE_Resource_Format format;
+            NBE_Resource_Layout layout;
+            NBE_type_size mipmap;
+         } texDesc;
+    };
+
+
+
+    
+};
+
+
 //GPU Resource Interface
 class NBE_API GPU_Resource_Interface
 {
@@ -56,22 +101,25 @@ public :
 
     virtual ~GPU_Resource_Interface() = 0 {};
     virtual type_NBE_ERR Create();
+    //virtual void SetProperty(NBE_type_size width,NBE_type_size height,NBE_type_size depth,NBE_Resource_Format pixFormat,NBE_Resource_Layout layout = NBE_RESOURCE_LAYOUT_UNKNOWN, NBE_Resource_Type type = NBE_RESOURCE_TYPE_UNKNOWN);
+    virtual type_NBE_ERR UploadData(void*);
 
-protected :
-    NBE_type_size m_width;
-    NBE_type_size m_height;
-    NBE_type_size m_depth;
-    NBE_Texture_Format m_format;
-    NBE_Resource_Type m_resType;
-    NBE_Resource_State m_currentState;
+public :
+    NBE_Resource_Descriptor m_desc;
+    NBE_Resource_State m_state;
 };
 NBE_Ptr_Typedef(GPU_Resource_Interface)
 
 //GPU Memory Manager
 class NBE_API GPU_MemoryManager_Interface
 {
-public :
+public:
     virtual ~GPU_MemoryManager_Interface() = 0 {};
+
+    virtual GPU_Resource_Interface* CreateGPUResource(NBE_Resource_Descriptor*, NBE_Pixel_Value* pixValue);    //create a buffer filled with given value
+
+
+
 
 };
 
@@ -88,10 +136,24 @@ public :
     virtual const NBE_WString& GetRendererName() = 0;
     virtual type_NBE_ERR CreateRenderEngine(NBE_Engine_Config&, _NBE_NS_OS OS_APP_Interface*) = 0;
 
+    //virtual type_NBE_ERR PrepareRender();
+
+    //virtual type_NBE_ERR AfterRender();
+
+    GPU_MemoryManager_Interface* GetGPUResourceManager() { return m_gpuMemoryManager.get(); };
+    virtual GPU_Resource_Interface* GetFrameBuffer(NBE_type_size);
+    virtual GPU_Resource_Interface* GetDSBuffer(NBE_type_size);
 
 public :
     NBE_Adapter_Features_Support m_featureSupport;
     GPU_MemoryManager_Interface_UPtr m_gpuMemoryManager;
+    NBE_type_size m_nTotalFrame;
+
+protected :
+    NBE_type_size m_nFrameIndex;
+
+    
+
 };
 
 NBE_Ptr_Typedef(Render_Engine_Interface)

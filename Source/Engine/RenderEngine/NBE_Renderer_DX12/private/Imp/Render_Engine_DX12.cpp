@@ -23,6 +23,17 @@ const NBE_WString& Render_Engine_DX12::GetRendererName()
     return name;
 }
 
+
+GPU_Resource_Interface * Render_Engine_DX12::GetFrameBuffer(NBE_type_size index)
+{
+    return m_listSwapChainRes[index].get();
+}
+
+GPU_Resource_Interface * Render_Engine_DX12::GetDSBuffer(NBE_type_size)
+{
+    return m_depthStencilRes.get();
+}
+
 type_NBE_ERR Render_Engine_DX12::CreateRenderEngine(NBE_Engine_Config & cfg, _NBE_NS_OS OS_APP_Interface* pApp)
 {
     //Create Device
@@ -65,8 +76,8 @@ type_NBE_ERR Render_Engine_DX12::CreateRenderEngine(NBE_Engine_Config & cfg, _NB
 
     //Create GPU Memory Manager
     //TODO: Its Temp
-    m_gpuMemoryManager = NBE_MakeUniquePtr(GPU_MemoryManager_DX12)();
-    m_cmdListManager = NBE_MakeUniquePtr(CommandListManager)(m_device,m_gpuMemoryManager);
+    m_gpuMemoryManager = NBE_MakeUniquePtr<GPU_MemoryManager_DX12>();
+    m_cmdListManager = NBE_MakeUniquePtr<CommandListManager>(m_device,m_gpuMemoryManager);
 
 
     //Create SwapChain
@@ -90,9 +101,24 @@ type_NBE_ERR Render_Engine_DX12::CreateRenderEngine(NBE_Engine_Config & cfg, _NB
         //Create Buffer Descriptor for swapChain
         ID3D12Resource* frameRes;
         ThrowIfFailed(m_swapChain->GetBuffer(i, IID_PPV_ARGS(&frameRes)));
-        
+        m_listSwapChainRes[i] = NBE_MakeSharedPtr<GPU_Resource_DX12>();
+        m_listSwapChainRes[i]->Attach(frameRes,NBE_RESOURCE_TYPE_RT);
     }
+    m_nFrameIndex = 0;
 
+    NBE_Resource_Descriptor resDesc = {};
+    resDesc.resType = NBE_RESOURCE_TYPE_DS;
+    resDesc.texDesc.width = cfg.width;
+    resDesc.texDesc.height = cfg.height;
+    resDesc.texDesc.depth = 1;
+    resDesc.texDesc.format = ConvertFormat(DXGI_FORMAT_D24_UNORM_S8_UINT);
+    resDesc.texDesc.layout = NBE_RESOURCE_LAYOUT_UNKNOWN;
+    
+    NBE_Pixel_Value pixValue = {};
+    pixValue.format = NBE_RESOURCE_FORMAT_D24S8;
+    pixValue.DS_Value.depth = 1.0f;
+    pixValue.DS_Value.stencil = 0;
+    m_depthStencilRes.reset(g_pRenderEngine->GetGPUResourceManager()->CreateGPUResource(resDesc,pixValue));
 
     return NBE_OK;
 }
@@ -117,6 +143,12 @@ void Render_Engine_DX12::CheckAdapterFeature()
             }
         }
     }
+}
+
+//After Render to Present Frame
+void Render_Engine_DX12::Present()
+{
+
 }
 
 NBE_NS_Render_END
